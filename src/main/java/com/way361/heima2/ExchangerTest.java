@@ -5,9 +5,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Ïß³ÌÊı¾İ½»»»²âÊÔ
- * Á½¸öÏß³ÌĞèÒª½»»»Êı¾İ£¬µ±Ò»¸öÏß³Ìµ½´ïÊ±£¬ĞèÒªµÈ´ıÁíÒ»¸öÏß³Ì¡£
- * µ±ÁíÒ»¸öÏß³Ìµ½´ïºó£¬»á½øĞĞÊı¾İ½»»»¡£
+ * çº¿ç¨‹æ•°æ®äº¤æ¢æµ‹è¯•
+ * ä¸¤ä¸ªçº¿ç¨‹éœ€è¦äº¤æ¢æ•°æ®ï¼Œå½“ä¸€ä¸ªçº¿ç¨‹åˆ°è¾¾æ—¶ï¼Œéœ€è¦ç­‰å¾…å¦ä¸€ä¸ªçº¿ç¨‹ã€‚
+ * å½“å¦ä¸€ä¸ªçº¿ç¨‹åˆ°è¾¾åï¼Œä¼šè¿›è¡Œæ•°æ®äº¤æ¢ã€‚
  * @author huge
  *
  */
@@ -16,16 +16,16 @@ public class ExchangerTest {
 	public static void main(String[] args) {
 		
 		ExecutorService service = Executors.newCachedThreadPool();
-		final Exchanger<String> exchanger = new Exchanger<String>();//Ïß³Ì½»»»¹¤¾ß£¬·ºĞÍÎªËùÒª½»»»Êı¾İµÄÀàĞÍ
+		final Exchanger<String> exchanger = new Exchanger<String>();//çº¿ç¨‹äº¤æ¢å·¥å…·ï¼Œæ³›å‹ä¸ºæ‰€è¦äº¤æ¢æ•°æ®çš„ç±»å‹
 		
 		service.execute(new Runnable(){
 			public void run() {
 				try {				
 					String data1 = "zxx";
-					System.out.println("Ïß³Ì" + Thread.currentThread().getName() +  "ÕıÔÚ°ÑÊı¾İ" + data1 +"»»³öÈ¥");
+					System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() +  "æ­£åœ¨æŠŠæ•°æ®" + data1 +"æ¢å‡ºå»");
 					Thread.sleep((long)(Math.random()*10000));
 					String data2 = (String)exchanger.exchange(data1);
-					System.out.println("Ïß³Ì" + Thread.currentThread().getName() +  "»»»ØµÄÊı¾İÎª" + data2);
+					System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() +  "æ¢å›çš„æ•°æ®ä¸º" + data2);
 				}catch(Exception e){
 				}
 			}
@@ -35,10 +35,10 @@ public class ExchangerTest {
 			public void run() {
 				try {				
 					String data1 = "lhm";
-					System.out.println("Ïß³Ì" + Thread.currentThread().getName() +  "ÕıÔÚ°ÑÊı¾İ" + data1 +"»»³öÈ¥");
+					System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() +  "æ­£åœ¨æŠŠæ•°æ®" + data1 +"æ¢å‡ºå»");
 					Thread.sleep((long)(Math.random()*10000));					
 					String data2 = (String)exchanger.exchange(data1);
-					System.out.println("Ïß³Ì" + Thread.currentThread().getName() +  "»»»ØµÄÊı¾İÎª" + data2);
+					System.out.println("çº¿ç¨‹" + Thread.currentThread().getName() +  "æ¢å›çš„æ•°æ®ä¸º" + data2);
 				}catch(Exception e){
 				}	
 			}

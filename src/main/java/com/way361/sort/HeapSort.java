@@ -1,7 +1,7 @@
 package com.way361.sort;
 
 /**
- * ¶ÑÅÅĞò
+ * å †æ’åº
  * 
  * @author huge
  *
@@ -10,10 +10,10 @@ public class HeapSort {
 
 	public static void main(String[] args) {
 		int[] array = { 3, 4, 5, 753, 2, 21, 5, 7, 899, 1 };
-		System.out.println("ÅÅĞòÇ°£º");
+		System.out.println("æ’åºå‰ï¼š");
 		print(array);
 		heapSort(array);
-		System.out.println("ÅÅĞòºó£º");
+		System.out.println("æ’åºåï¼š");
 		print(array);
 	}
 
@@ -22,7 +22,7 @@ public class HeapSort {
 		for (int j = n / 2 - 1; j >= 0; j--) {
 			sift(array, j, n - 1);
 		}
-		for (int j = n - 1; j > 0; j--) {//½«×îĞ¡Öµµ÷Õûµ½×îºó£¬È»ºóÔÙÉú³É×îĞ¡¶Ñ
+		for (int j = n - 1; j > 0; j--) {//å°†æœ€å°å€¼è°ƒæ•´åˆ°æœ€åï¼Œç„¶åå†ç”Ÿæˆæœ€å°å †
 			int temp = array[0];
 			array[0] = array[j];
 			array[j] = temp;
@@ -31,8 +31,8 @@ public class HeapSort {
 	}
 
 	/**
-	 * ÒÔbegin¡¢endÎª½çÏŞ£¬Éú³É×îĞ¡¶Ñ
-	 * @param array Êı¾İ
+	 * ä»¥beginã€endä¸ºç•Œé™ï¼Œç”Ÿæˆæœ€å°å †
+	 * @param array æ•°æ®
 	 * @param begin
 	 * @param end
 	 */

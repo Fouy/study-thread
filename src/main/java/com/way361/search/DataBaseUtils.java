@@ -15,7 +15,7 @@ public class DataBaseUtils {
 	public static final String password = "123456";
 
 	/**
-	 * 获取所有数据
+	 * 禄帽脠隆脣霉脫脨脢媒戮脻
 	 * @return
 	 */
 	public static List<String> getPicPath() {

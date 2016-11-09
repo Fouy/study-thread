@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 /**
- * ½»Ìæ2SºÍ4S´òÓ¡³ö bombing
+ * äº¤æ›¿2Så’Œ4Sæ‰“å°å‡º bombing
  * @author huge
  *
  */

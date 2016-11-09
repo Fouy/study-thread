@@ -1,7 +1,7 @@
 package com.way361.sort;
 
 /**
- * ¹é²¢ÅÅĞò
+ * å½’å¹¶æ’åº
  * 
  * @author huge
  *
@@ -10,15 +10,15 @@ public class MergeSort {
 
 	public static void main(String[] args) {
 		int[] array = { 3, 4, 5, 753, 2, 21, 5, 7, 899, 1 };
-		System.out.println("ÅÅĞòÇ°£º");
+		System.out.println("æ’åºå‰ï¼š");
 		print(array);
 		mergeSort(array);
-		System.out.println("ÅÅĞòºó£º");
+		System.out.println("æ’åºåï¼š");
 		print(array);
 	}
 
 	/**
-	 * ¹é²¢ÅÅĞò
+	 * å½’å¹¶æ’åº
 	 * 
 	 * @param X
 	 */
@@ -36,7 +36,7 @@ public class MergeSort {
 	}
 
 	/**
-	 * Ò»ÌË¹é²¢
+	 * ä¸€è¶Ÿå½’å¹¶
 	 * 
 	 * @param X
 	 * @param Y
@@ -57,7 +57,7 @@ public class MergeSort {
 	}
 
 	/**
-	 * Ò»´Î¹é²¢
+	 * ä¸€æ¬¡å½’å¹¶
 	 * 
 	 * @param X
 	 * @param Y

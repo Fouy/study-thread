@@ -4,7 +4,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * ×èÈû¶ÓÁĞ²âÊÔ
+ * é˜»å¡é˜Ÿåˆ—æµ‹è¯•
  * @author huge
  *
  */
@@ -12,18 +12,18 @@ public class BlockingQueueTest {
 	
 	public static void main(String[] args) {
 		
-		final BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(3);//×èÈû¶ÓÁĞ¿Õ¼äÎª3
+		final BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(3);//é˜»å¡é˜Ÿåˆ—ç©ºé—´ä¸º3
 		
-		//Æô¶¯Á½¸öÏß³Ì£¬·ÅÊı¾İ
+		//å¯åŠ¨ä¸¤ä¸ªçº¿ç¨‹ï¼Œæ”¾æ•°æ®
 		for(int i=0;i<2;i++){
 			new Thread(){
 				public void run(){
 					while(true){
 						try {
 							Thread.sleep((long)(Math.random()*1000));
-							System.out.println(Thread.currentThread().getName() + "×¼±¸·ÅÊı¾İ!");							
-							queue.put(1);//µ±Ã»ÓĞ¿Õ¼äÊ±£¬Ïß³Ì»á×èÈû£¬Ö±µ½ÓĞ¿Õ¼ä´æ·ÅÎªÖ¹
-							System.out.println(Thread.currentThread().getName() + "ÒÑ¾­·ÅÁËÊı¾İ£¬" + "¶ÓÁĞÄ¿Ç°ÓĞ" + queue.size() + "¸öÊı¾İ");
+							System.out.println(Thread.currentThread().getName() + "å‡†å¤‡æ”¾æ•°æ®!");							
+							queue.put(1);//å½“æ²¡æœ‰ç©ºé—´æ—¶ï¼Œçº¿ç¨‹ä¼šé˜»å¡ï¼Œç›´åˆ°æœ‰ç©ºé—´å­˜æ”¾ä¸ºæ­¢
+							System.out.println(Thread.currentThread().getName() + "å·²ç»æ”¾äº†æ•°æ®ï¼Œ" + "é˜Ÿåˆ—ç›®å‰æœ‰" + queue.size() + "ä¸ªæ•°æ®");
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
@@ -32,16 +32,16 @@ public class BlockingQueueTest {
 			}.start();
 		}
 		
-		//¿ªÆôÒ»¸öÏß³Ì£¬ÓÃÀ´ÄÃ³öÊı¾İ
+		//å¼€å¯ä¸€ä¸ªçº¿ç¨‹ï¼Œç”¨æ¥æ‹¿å‡ºæ•°æ®
 		new Thread(){
 			public void run(){
 				while(true){
 					try {
-						//½«´Ë´¦µÄË¯ÃßÊ±¼ä·Ö±ğ¸ÄÎª100ºÍ1000£¬¹Û²ìÔËĞĞ½á¹û
+						//å°†æ­¤å¤„çš„ç¡çœ æ—¶é—´åˆ†åˆ«æ”¹ä¸º100å’Œ1000ï¼Œè§‚å¯Ÿè¿è¡Œç»“æœ
 						Thread.sleep(1000);
-						System.out.println(Thread.currentThread().getName() + "×¼±¸È¡Êı¾İ!");
-						queue.take();//µ±Ã»ÓĞÊı¾İÊ±£¬Ïß³Ì×èÈû£¬Ö±µ½ÓĞÊı¾İÎªÖ¹
-						System.out.println(Thread.currentThread().getName() + "ÒÑ¾­È¡×ßÊı¾İ£¬" + "¶ÓÁĞÄ¿Ç°ÓĞ" + queue.size() + "¸öÊı¾İ");					
+						System.out.println(Thread.currentThread().getName() + "å‡†å¤‡å–æ•°æ®!");
+						queue.take();//å½“æ²¡æœ‰æ•°æ®æ—¶ï¼Œçº¿ç¨‹é˜»å¡ï¼Œç›´åˆ°æœ‰æ•°æ®ä¸ºæ­¢
+						System.out.println(Thread.currentThread().getName() + "å·²ç»å–èµ°æ•°æ®ï¼Œ" + "é˜Ÿåˆ—ç›®å‰æœ‰" + queue.size() + "ä¸ªæ•°æ®");					
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

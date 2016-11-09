@@ -23,7 +23,7 @@ public class GetImage {
 						String path = getPath();
 						byte[] btImg = getImageFromNetByUrl(host + path);
 						if(null != btImg && btImg.length > 0){
-//							System.out.println("¶ÁÈ¡µ½£º" + btImg.length + " ×Ö½Ú");
+//							System.out.println("è¯»å–åˆ°ï¼š" + btImg.length + " å­—èŠ‚");
 							String fileName = path.substring(path.lastIndexOf('/') + 1).trim();
 							writeImageToDisk(btImg, fileName);
 						}
@@ -40,7 +40,7 @@ public class GetImage {
 			}
 		}
 		
-		System.out.println("¶ÁĞ´Íê±Ï");
+		System.out.println("è¯»å†™å®Œæ¯•");
 		
 	}
 	
@@ -50,9 +50,9 @@ public class GetImage {
 	
 	
 	/**
-	 * ½«Í¼Æ¬Ğ´Èëµ½´ÅÅÌ
-	 * @param img Í¼Æ¬Êı¾İÁ÷
-	 * @param fileName ÎÄ¼ş±£´æÊ±µÄÃû³Æ
+	 * å°†å›¾ç‰‡å†™å…¥åˆ°ç£ç›˜
+	 * @param img å›¾ç‰‡æ•°æ®æµ
+	 * @param fileName æ–‡ä»¶ä¿å­˜æ—¶çš„åç§°
 	 */
 	public static void writeImageToDisk(byte[] img, String fileName){
 		try {
@@ -61,14 +61,14 @@ public class GetImage {
 			fops.write(img);
 			fops.flush();
 			fops.close();
-//			System.out.println("Í¼Æ¬ÒÑ¾­Ğ´Èëµ½CÅÌ");
+//			System.out.println("å›¾ç‰‡å·²ç»å†™å…¥åˆ°Cç›˜");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	/**
-	 * ¸ù¾İµØÖ·»ñµÃÊı¾İµÄ×Ö½ÚÁ÷
-	 * @param strUrl ÍøÂçÁ¬½ÓµØÖ·
+	 * æ ¹æ®åœ°å€è·å¾—æ•°æ®çš„å­—èŠ‚æµ
+	 * @param strUrl ç½‘ç»œè¿æ¥åœ°å€
 	 * @return
 	 */
 	public static byte[] getImageFromNetByUrl(String strUrl){
@@ -77,8 +77,8 @@ public class GetImage {
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setConnectTimeout(200 * 1000);
-			InputStream inStream = conn.getInputStream();//Í¨¹ıÊäÈëÁ÷»ñÈ¡Í¼Æ¬Êı¾İ
-			byte[] btImg = readInputStream(inStream);//µÃµ½Í¼Æ¬µÄ¶ş½øÖÆÊı¾İ
+			InputStream inStream = conn.getInputStream();//é€šè¿‡è¾“å…¥æµè·å–å›¾ç‰‡æ•°æ®
+			byte[] btImg = readInputStream(inStream);//å¾—åˆ°å›¾ç‰‡çš„äºŒè¿›åˆ¶æ•°æ®
 			return btImg;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,8 +86,8 @@ public class GetImage {
 		return null;
 	}
 	/**
-	 * ´ÓÊäÈëÁ÷ÖĞ»ñÈ¡Êı¾İ
-	 * @param inStream ÊäÈëÁ÷
+	 * ä»è¾“å…¥æµä¸­è·å–æ•°æ®
+	 * @param inStream è¾“å…¥æµ
 	 * @return
 	 * @throws Exception
 	 */

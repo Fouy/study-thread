@@ -24,7 +24,7 @@ public class CacheDemo {
 				rwl.writeLock().lock();
 				try {
 					if (value == null) {
-						value = "aaaa";// ʵ��ʧȥqueryDB();
+						value = "aaaa";// 实际失去queryDB();
 					}
 				} finally {
 					rwl.writeLock().unlock();

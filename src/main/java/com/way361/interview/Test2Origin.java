@@ -5,15 +5,15 @@ public class Test2Origin {
 	public static void main(String[] args) {
 
 		System.out.println("begin:" + (System.currentTimeMillis() / 1000));
-		for (int i = 0; i < 10; i++) { // ÕâÐÐ²»ÄÜ¸Ä¶¯
-			String input = i + ""; // ÕâÐÐ²»ÄÜ¸Ä¶¯
+		for (int i = 0; i < 10; i++) { // è¿™è¡Œä¸èƒ½æ”¹åŠ¨
+			String input = i + ""; // è¿™è¡Œä¸èƒ½æ”¹åŠ¨
 			String output = TestDo1.doSome(input);
 			System.out.println(Thread.currentThread().getName() + ":" + output);
 		}
 	}
 }
 
-// ²»ÄÜ¸Ä¶¯´ËTestDoÀà
+// ä¸èƒ½æ”¹åŠ¨æ­¤TestDoç±»
 class TestDo1 {
 	
 	public static String doSome(String input) {

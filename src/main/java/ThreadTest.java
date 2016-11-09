@@ -21,7 +21,7 @@ public class ThreadTest {
 			while (true) {
 				/*
 				 * synchronized (ThreadTest.this) { 
-				 * 		System.out.println("j--=" + j--); //ÕâÀïÅ×Òì³£ÁË£¬ËøÄÜÊÍ·ÅÂğ£¿
+				 * 		System.out.println("j--=" + j--); //è¿™é‡ŒæŠ›å¼‚å¸¸äº†ï¼Œé”èƒ½é‡Šæ”¾å—ï¼Ÿ
 				 * }
 				 */
 				lock.lock();

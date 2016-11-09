@@ -4,8 +4,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * Ê¹ÓÃÁ½¸ö¿Õ¼äÎª1µÄ×èÈû¶ÓÁĞ£¬ÊµÏÖÏß³ÌÍ¬²½Í¨ĞÅ
- * ×ÓÏß³ÌÔËĞĞ10´Î£¬¸ú×ÅÖ÷Ïß³ÌÔËĞĞ100´Î¡£ÒÔ´Ë¹æÂÉ£¬Íù¸´½»Ìæ50´Î¡£
+ * ä½¿ç”¨ä¸¤ä¸ªç©ºé—´ä¸º1çš„é˜»å¡é˜Ÿåˆ—ï¼Œå®ç°çº¿ç¨‹åŒæ­¥é€šä¿¡
+ * å­çº¿ç¨‹è¿è¡Œ10æ¬¡ï¼Œè·Ÿç€ä¸»çº¿ç¨‹è¿è¡Œ100æ¬¡ã€‚ä»¥æ­¤è§„å¾‹ï¼Œå¾€å¤äº¤æ›¿50æ¬¡ã€‚
  * @author huge
  *
  */
@@ -33,7 +33,7 @@ public class BlockingQueueCommunication {
 		BlockingQueue<Integer> queue1 = new ArrayBlockingQueue<Integer>(1);
 		BlockingQueue<Integer> queue2 = new ArrayBlockingQueue<Integer>(1);
 
-		{// ÄäÃû¹¹Ôì·½·¨£¬ÔÚËùÓĞ¹¹Ôì·½·¨Ç°ÃæÖ´ĞĞ
+		{// åŒ¿åæ„é€ æ–¹æ³•ï¼Œåœ¨æ‰€æœ‰æ„é€ æ–¹æ³•å‰é¢æ‰§è¡Œ
 			try {
 				queue2.put(1);
 			} catch (InterruptedException e) {
@@ -42,7 +42,7 @@ public class BlockingQueueCommunication {
 		}
 
 		/**
-		 * ×ÓÏß³ÌÖ´ĞĞµÄ·½·¨
+		 * å­çº¿ç¨‹æ‰§è¡Œçš„æ–¹æ³•
 		 * @param i
 		 */
 		public void sub(int i) {
@@ -64,7 +64,7 @@ public class BlockingQueueCommunication {
 		}
 
 		/**
-		 * Ö÷Ïß³ÌÖ´ĞĞµÄ·½·¨
+		 * ä¸»çº¿ç¨‹æ‰§è¡Œçš„æ–¹æ³•
 		 * @param i
 		 */
 		public void main(int i) {

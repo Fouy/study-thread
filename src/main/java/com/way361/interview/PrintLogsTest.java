@@ -4,8 +4,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * ʹ�ö��̴߳�ӡ��־
- * ʹ������������ʵ�֣�����֮���ͨ�š�
+ * 使用多线程打印日志
+ * 使用阻塞队列来实现，进程之间的通信。
  * @author huge
  *
  */
@@ -33,11 +33,11 @@ public class PrintLogsTest {
 
 		System.out.println("begin:" + (System.currentTimeMillis() / 1000));
 		/*
-		 * ģ�⴦��16����־������Ĵ��������16����־���󣬵�ǰ������Ҫ����16����ܴ�ӡ����Щ��־��
-		 * �޸ĳ�����룬���ĸ��߳�����16��������4���Ӵ��ꡣ
+		 * 模拟处理16行日志，下面的代码产生了16个日志对象，当前代码需要运行16秒才能打印完这些日志。
+		 * 修改程序代码，开四个线程让这16个对象在4秒钟打完。
 		 */
-		for (int i = 0; i < 16; i++) { // ���д��벻�ܸĶ�
-			final String log = "" + (i + 1);// ���д��벻�ܸĶ�
+		for (int i = 0; i < 16; i++) { // 这行代码不能改动
+			final String log = "" + (i + 1);// 这行代码不能改动
 			{
 				try {
 					queue.put(log);
@@ -49,7 +49,7 @@ public class PrintLogsTest {
 		}
 	}
 
-	// parseLog�����ڲ��Ĵ��벻�ܸĶ�
+	// parseLog方法内部的代码不能改动
 	public static void parseLog(String log) {
 		System.out.println(log + ":" + (System.currentTimeMillis() / 1000));
 

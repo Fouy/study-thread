@@ -5,18 +5,18 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Ïß³Ì³Ø²âÊÔ
+ * çº¿ç¨‹æ± æµ‹è¯•
  * @author huge
  *
  */
 public class ThreadPoolTest {
 
 	public static void main(String[] args) {
-		//ExecutorService threadPool = Executors.newFixedThreadPool(3);//¹Ì¶¨Ïß³Ì³Ø
-		//ExecutorService threadPool = Executors.newCachedThreadPool();//»º´æÏß³Ì³Ø
-		ExecutorService threadPool = Executors.newSingleThreadExecutor();//µ¥Ïß³Ì³Ø
+		//ExecutorService threadPool = Executors.newFixedThreadPool(3);//å›ºå®šçº¿ç¨‹æ± 
+		//ExecutorService threadPool = Executors.newCachedThreadPool();//ç¼“å­˜çº¿ç¨‹æ± 
+		ExecutorService threadPool = Executors.newSingleThreadExecutor();//å•çº¿ç¨‹æ± 
 		
-		//Ìí¼ÓÊ®¸öÈÎÎñµ½Ïß³Ì³Ø
+		//æ·»åŠ åä¸ªä»»åŠ¡åˆ°çº¿ç¨‹æ± 
 		for(int i=1;i<=10;i++){
 			final int task = i;
 			threadPool.execute(new Runnable(){
@@ -36,7 +36,7 @@ public class ThreadPoolTest {
 		System.out.println("all of 10 tasks have committed! ");
 		//threadPool.shutdownNow();
 		
-		//¶¨Ê±ÈÎÎñµÄÏß³Ì³Ø
+		//å®šæ—¶ä»»åŠ¡çš„çº¿ç¨‹æ± 
 		Executors.newScheduledThreadPool(3).scheduleAtFixedRate(
 			new Runnable(){
 				public void run() {

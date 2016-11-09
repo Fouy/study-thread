@@ -28,9 +28,9 @@ public class CallableAndFuture {
 					};
 				}
 		);
-		System.out.println("µÈ´ý½á¹û");
+		System.out.println("ÂµÃˆÂ´Ã½Â½Ã¡Â¹Ã»");
 		try {
-			System.out.println("ÄÃµ½½á¹û£º" + future.get());
+			System.out.println("Ã„ÃƒÂµÂ½Â½Ã¡Â¹Ã»Â£Âº" + future.get());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

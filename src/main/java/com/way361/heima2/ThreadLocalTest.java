@@ -31,7 +31,7 @@ public class ThreadLocalTest {
 	}
 	
 	/**
-	 * Ä£¿éA
+	 * æ¨¡å—A
 	 * @author huge
 	 *
 	 */
@@ -52,7 +52,7 @@ public class ThreadLocalTest {
 	}
 	
 	/**
-	 * Ä£¿éB
+	 * æ¨¡å—B
 	 * @author huge
 	 *
 	 */
@@ -70,7 +70,7 @@ public class ThreadLocalTest {
 }
 
 /**
- * Ïß³ÌÏà¹ØµÄÊı¾İ
+ * çº¿ç¨‹ç›¸å…³çš„æ•°æ®
  * @author huge
  *
  */

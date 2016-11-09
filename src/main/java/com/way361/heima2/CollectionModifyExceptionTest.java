@@ -5,9 +5,9 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * ¼¯ºÏ²âÊÔ
- * ArrayList ÔÚµü´úÊ±²»¿ÉÒÔĞŞ¸ÄÄÚÈİ£¬·ñÔò»á³öÏÖËÀÑ­»·µÈ´íÎó¡£
- * ´ËÊ±¿ÉÒÔÊ¹ÓÃCopyOnWriteArrayList £¬Ôò¿ÉÒÔ±ÜÃâÕâÖÖÇé¿ö¡£
+ * é›†åˆæµ‹è¯•
+ * ArrayList åœ¨è¿­ä»£æ—¶ä¸å¯ä»¥ä¿®æ”¹å†…å®¹ï¼Œå¦åˆ™ä¼šå‡ºç°æ­»å¾ªç¯ç­‰é”™è¯¯ã€‚
+ * æ­¤æ—¶å¯ä»¥ä½¿ç”¨CopyOnWriteArrayList ï¼Œåˆ™å¯ä»¥é¿å…è¿™ç§æƒ…å†µã€‚
  * @author huge
  *
  */
@@ -18,15 +18,15 @@ public class CollectionModifyExceptionTest {
 		Collection<User> users = new CopyOnWriteArrayList<User>();
 
 		// new ArrayList();
-		users.add(new User("ÕÅÈı", 28));
-		users.add(new User("ÀîËÄ", 25));
-		users.add(new User("ÍõÎå", 31));
+		users.add(new User("å¼ ä¸‰", 28));
+		users.add(new User("æå››", 25));
+		users.add(new User("ç‹äº”", 31));
 		
 		Iterator<User> itrUsers = users.iterator();
 		while (itrUsers.hasNext()) {
 			System.out.println("aaaa");
 			User user = (User) itrUsers.next();
-			if ("ÀîËÄ".equals(user.getName())) {
+			if ("æå››".equals(user.getName())) {
 				users.remove(user);
 				// itrUsers.remove();
 			} else {

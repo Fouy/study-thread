@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 
 public class IOTest {
 	public static void main(String[] args) throws Exception {
-		String str = "ÖÐ¹úÈË";
+		String str = "ï¿½Ð¹ï¿½ï¿½ï¿½";
 		/*FileOutputStream fos  = new FileOutputStream("1.txt");
 		
 		fos.write(str.getBytes("UTF-8"));

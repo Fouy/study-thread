@@ -3,7 +3,7 @@ package com.way361.interview;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-//²»ÄÜ¸Ä¶¯´ËTestÀà	
+//ä¸èƒ½æ”¹åŠ¨æ­¤Testç±»	
 public class Test3 extends Thread {
 
 	private TestDo testDo;
@@ -13,8 +13,8 @@ public class Test3 extends Thread {
 	public Test3(String key, String key2, String value) {
 		this.testDo = TestDo.getInstance();
 		/*
-		 * ³£Á¿"1"ºÍ"1"ÊÇÍ¬Ò»¸ö¶ÔÏó£¬ÏÂÃæÕâĞĞ´úÂë¾ÍÊÇÒªÓÃ"1"+""µÄ·½Ê½²úÉúĞÂµÄ¶ÔÏó£¬
-		 * ÒÔÊµÏÖÄÚÈİÃ»ÓĞ¸Ä±ä£¬ÈÔÈ»ÏàµÈ£¨¶¼»¹Îª"1"£©£¬µ«¶ÔÏóÈ´²»ÔÙÊÇÍ¬Ò»¸öµÄĞ§¹û
+		 * å¸¸é‡"1"å’Œ"1"æ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼Œä¸‹é¢è¿™è¡Œä»£ç å°±æ˜¯è¦ç”¨"1"+""çš„æ–¹å¼äº§ç”Ÿæ–°çš„å¯¹è±¡ï¼Œ
+		 * ä»¥å®ç°å†…å®¹æ²¡æœ‰æ”¹å˜ï¼Œä»ç„¶ç›¸ç­‰ï¼ˆéƒ½è¿˜ä¸º"1"ï¼‰ï¼Œä½†å¯¹è±¡å´ä¸å†æ˜¯åŒä¸€ä¸ªçš„æ•ˆæœ
 		 */
 		this.key = key + key2;
 		/*
@@ -74,7 +74,7 @@ class TestDo {
 			}
 		}
 		synchronized (o)
-		// ÒÔ´óÀ¨ºÅÄÚµÄÊÇĞèÒª¾Ö²¿Í¬²½µÄ´úÂë£¬²»ÄÜ¸Ä¶¯!
+		// ä»¥å¤§æ‹¬å·å†…çš„æ˜¯éœ€è¦å±€éƒ¨åŒæ­¥çš„ä»£ç ï¼Œä¸èƒ½æ”¹åŠ¨!
 		{
 			try {
 				Thread.sleep(1000);

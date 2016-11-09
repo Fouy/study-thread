@@ -1,7 +1,7 @@
 package com.way361.heima2;
 
 /**
- * ¶àÏß³Ì¹²ÏíÊı¾İ
+ * å¤šçº¿ç¨‹å…±äº«æ•°æ®
  * @author huge
  *
  */
@@ -10,12 +10,12 @@ public class MultiThreadShareData {
 	private static ShareData1 data1 = new ShareData1();
 	
 	public static void main(String[] args) {
-		//·½Ê½Ò»
+		//æ–¹å¼ä¸€
 		ShareData1 data2 = new ShareData1();
 		new Thread(new MyRunnable1(data2)).start();
 		new Thread(new MyRunnable2(data2)).start();
 		
-		//·½Ê½¶ş
+		//æ–¹å¼äºŒ
 		final ShareData1 data1 = new ShareData1();
 		new Thread(new Runnable(){
 			@Override
@@ -36,7 +36,7 @@ public class MultiThreadShareData {
 
 }
 	
-	//×ÔÔöÏß³Ì
+	//è‡ªå¢çº¿ç¨‹
 	class MyRunnable1 implements Runnable{
 		private ShareData1 data1;
 		public MyRunnable1(ShareData1 data1){
@@ -47,7 +47,7 @@ public class MultiThreadShareData {
 			
 		}
 	}
-	//×Ô¼õÏß³Ì
+	//è‡ªå‡çº¿ç¨‹
 	class MyRunnable2 implements Runnable{
 		private ShareData1 data1;
 		public MyRunnable2(ShareData1 data1){
@@ -59,7 +59,7 @@ public class MultiThreadShareData {
 	}
 
 	/**
-	 * ¹²ÏíµÄÊı¾İ
+	 * å…±äº«çš„æ•°æ®
 	 * @author huge
 	 *
 	 */

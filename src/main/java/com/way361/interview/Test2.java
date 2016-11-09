@@ -4,9 +4,9 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
 
 /**
- * ¿ªÊ®¸öÏß³Ì£¬ÒÔÉú²úÕßÏû·ÑÕßµÄ·½Ê½À´´¦Àí´òÓ¡ĞÅÏ¢¡£
- * Ê¹ÓÃÍ¬²½¶ÓÁĞ£¬SynchronousQueue ÔÚ¶ÓÁĞÖĞ£¬Ö»ÓĞµ±
- * ÓĞÏß³ÌÀ´È¡Êı¾İÊ±£¬²Å¿ÉÒÔ·ÅÈëÊı¾İ¡£
+ * å¼€åä¸ªçº¿ç¨‹ï¼Œä»¥ç”Ÿäº§è€…æ¶ˆè´¹è€…çš„æ–¹å¼æ¥å¤„ç†æ‰“å°ä¿¡æ¯ã€‚
+ * ä½¿ç”¨åŒæ­¥é˜Ÿåˆ—ï¼ŒSynchronousQueue åœ¨é˜Ÿåˆ—ä¸­ï¼Œåªæœ‰å½“
+ * æœ‰çº¿ç¨‹æ¥å–æ•°æ®æ—¶ï¼Œæ‰å¯ä»¥æ”¾å…¥æ•°æ®ã€‚
  * @author huge
  *
  */
@@ -15,18 +15,18 @@ public class Test2 {
 	public static void main(String[] args) {
 		
 		final Semaphore semaphore = new Semaphore(1);
-		final SynchronousQueue<String> queue = new SynchronousQueue<String>();//Í¬²½¶ÓÁĞ
+		final SynchronousQueue<String> queue = new SynchronousQueue<String>();//åŒæ­¥é˜Ÿåˆ—
 		
 		for (int i = 0; i < 10; i++) {
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
 					try {
-						semaphore.acquire();//¼ÓÍ¬²½Ëø£¬ÀàËÆÓÚLock
+						semaphore.acquire();//åŠ åŒæ­¥é”ï¼Œç±»ä¼¼äºLock
 						String input = queue.take();
 						String output = TestDo2.doSome(input);
 						System.out.println(Thread.currentThread().getName() + ":" + output);
-						semaphore.release();//ÊÍ·ÅÍ¬²½Ëø
+						semaphore.release();//é‡Šæ”¾åŒæ­¥é”
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -35,8 +35,8 @@ public class Test2 {
 		}
 
 		System.out.println("begin:" + (System.currentTimeMillis() / 1000));
-		for (int i = 0; i < 10; i++) { // ÕâĞĞ²»ÄÜ¸Ä¶¯
-			String input = i + ""; // ÕâĞĞ²»ÄÜ¸Ä¶¯
+		for (int i = 0; i < 10; i++) { // è¿™è¡Œä¸èƒ½æ”¹åŠ¨
+			String input = i + ""; // è¿™è¡Œä¸èƒ½æ”¹åŠ¨
 			try {
 				queue.put(input);
 			} catch (InterruptedException e) {
@@ -46,7 +46,7 @@ public class Test2 {
 	}
 }
 
-// ²»ÄÜ¸Ä¶¯´ËTestDoÀà
+// ä¸èƒ½æ”¹åŠ¨æ­¤TestDoç±»
 class TestDo2 {
 	
 	public static String doSome(String input) {
